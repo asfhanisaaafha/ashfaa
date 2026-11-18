@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayRental - Jasa Rental PlayStation & Game Console</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            blue: '#00439C',
+                            darkBlue: '#0A192F',
+                            cyan: '#00F0FF',
+                            accent: '#6366F1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .ps-gradient {
+            background: linear-gradient(135deg, #0A192F 0%, #00439C 50%, #020617 100%);
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-cyan selection:text-slate-900">
+
+    <!-- Navbar Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <i class="fa-brands fa-playstation text-2xl text-white"></i>
+                </div>
+                <span class="text-2xl font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-cyan-400">
+                    PLAY<span class="text-brand-cyan">RENTAL</span>
+                </span>
+            </div>
+
+            <!-- Nav Links Desktop -->
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-brand-cyan transition-colors">Beranda</a>
+                <a href="#harga" class="hover:text-brand-cyan transition-colors">Daftar Harga</a>
+                <a href="#layanan" class="hover:text-brand-cyan transition-colors">Layanan & Layanan COD</a>
+                <a href="#pembayaran" class="hover:text-brand-cyan transition-colors">Pembayaran</a>
+                <a href="#prosedur" class="hover:text-brand-cyan transition-colors">Cara Sewa</a>
+            </div>
+
+            <!-- CTA Button Navbar -->
+            <a href="https://wa.me/6282115245798?text=Halo%20PlayRental,%20saya%20ingin%20tanya%20sewa%20PS" target="_blank" class="hidden sm:inline-flex items-center space-x-2 bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-5 py-2.5 rounded-full transition-all duration-300 shadow-lg shadow-emerald-500/20 hover:scale-105">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Hubungi WA</span>
+            </a>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-slate-300 hover:text-white p-2 text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="block py-2 text-slate-300 hover:text-brand-cyan font-medium border-b border-slate-800/50">Beranda</a>
+            <a href="#harga" class="block py-2 text-slate-300 hover:text-brand-cyan font-medium border-b border-slate-800/50">Daftar Harga</a>
+            <a href="#layanan" class="block py-2 text-slate-300 hover:text-brand-cyan font-medium border-b border-slate-800/50">Layanan & COD</a>
+            <a href="#pembayaran" class="block py-2 text-slate-300 hover:text-brand-cyan font-medium border-b border-slate-800/50">Pembayaran</a>
+            <a href="#prosedur" class="block py-2 text-slate-300 hover:text-brand-cyan font-medium border-b border-slate-800/50">Cara Sewa</a>
+            <a href="https://wa.me/6282115245798?text=Halo%20PlayRental,%20saya%20ingin%20tanya%20sewa%20PS" target="_blank" class="flex items-center justify-center space-x-2 bg-emerald-500 text-slate-950 font-bold py-3 rounded-xl mt-4">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Order via WhatsApp</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden ps-gradient">
+        <!-- Decorative Glow Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Left Text -->
+                <div class="space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/80 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-brand-cyan shadow-inner">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Sewa Mudah & Unit Terawat Full Game</span>
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Rental PlayStation <br class="hidden sm:inline"/>
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Antar-Jemput COD</span> atau Main Di Tempat!
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Rasakan keseruan main game favorit bareng teman dan keluarga. PS3, PS4, hingga PS5 lengkap dengan game-game hits terbaru. Siap diantar langsung ke rumahmu!
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#harga" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold rounded-2xl shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all duration-300 text-center">
+                            <i class="fa-solid fa-gamepad mr-2"></i> Pilih Tipe PS
+                        </a>
+                        <a href="https://wa.me/6282115245798?text=Halo,%20saya%20mau%20order%20rental%20PS" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-emerald-500/50 hover:border-emerald-400 text-emerald-400 font-bold rounded-2xl hover:bg-slate-800/80 transition-all duration-300 text-center flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Chat Whatsapp</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Key Points -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-800/80 max-w-md mx-auto lg:mx-0 text-left">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-truck-fast text-brand-cyan text-lg"></i>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium">Bisa COD</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-house-user text-brand-cyan text-lg"></i>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium">Main Di Tempat</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-wallet text-brand-cyan text-lg"></i>
+                            <span class="text-xs sm:text-sm text-slate-300 font-medium">E-Wallet/Bank</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Right Card Simulation -->
+                <div class="relative flex justify-center">
+                    <div class="w-full max-w-md bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-2xl backdrop-blur-xl relative">
+                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-red-500 to-pink-500 text-white text-xs font-black uppercase px-3 py-1 rounded-full shadow-md">
+                            Best Seller
+                        </div>
+                        
+                        <div class="relative h-56 rounded-2xl overflow-hidden mb-6 bg-slate-950 flex items-center justify-center border border-slate-800">
+                            <!-- Hero Image Placeholder for PS5 -->
+                            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80" 
+                                 alt="PlayStation Console" 
+                                 class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/0f172a/00f0ff?text=PlayStation+Console'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                            <span class="absolute bottom-3 left-4 font-extrabold text-white text-lg flex items-center space-x-2">
+                                <i class="fa-brands fa-playstation text-blue-500"></i>
+                                <span>Paket Komplit Siap Main</span>
+                            </span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-400">Unit Tersewa Hari Ini:</span>
+                                <span class="text-emerald-400 font-bold"><i class="fa-solid fa-fire mr-1"></i>9/10 Terisi</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-gradient-to-r from-blue-500 to-emerald-400 h-full w-[90%]"></div>
+                            </div>
+                            <p class="text-xs text-slate-400 pt-2">
+                                *Termasuk 2 Stik Wireless Ori, TV (Khusus sewa tempat), Kabel HDMI, Kabel Power, & Puluhan Game Populer (FC24/FIFA, PES/eFootball, GTA V, God of War, dll)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="harga" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">Pilihan Console</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Daftar Paket & Harga Rental PlayStation</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Pilih console favoritmu sesuai budget. Harga fleksibel harian, mingguan, hingga sewa bulanan.</p>
+            </div>
+
+            <!-- Price Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- PS3 Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-2 group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-blue-950/60 border border-blue-800/50 rounded-2xl text-blue-400 text-2xl">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </span>
+                            <span class="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full">Hemat</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-1">PlayStation 3</h4>
+                        <p class="text-xs text-slate-400 mb-6">Cocok untuk nostalgic gaming & multiplayer santai.</p>
+                        
+                        <!-- Pricing List -->
+                        <div class="space-y-3 mb-6 bg-slate-950/60 p-4 rounded-2xl border border-slate-800/50">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-400">12 Jam</span>
+                                <span class="font-bold text-white">Rp 40.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800/50 pt-2">
+                                <span class="text-slate-400">24 Jam (1 Hari)</span>
+                                <span class="font-bold text-cyan-400">Rp 60.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800/50 pt-2">
+                                <span class="text-slate-400">3 Hari Paket Hemat</span>
+                                <span class="font-bold text-white">Rp 160.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="space-y-2 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>2 Stik DualShock 3 Wireless</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Full Game (PES, GTA V, Naruto, dll)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Kabel HDMI + Power lengkap</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderViaWA('PlayStation 3')" class="w-full py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 border border-slate-700">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                        <span>Sewa PS3 Sekarang</span>
+                    </button>
+                </div>
+
+                <!-- PS4 Card (Featured) -->
+                <div class="bg-gradient-to-b from-slate-900 via-slate-900 to-blue-950/40 border-2 border-cyan-500/50 rounded-3xl p-6 flex flex-col justify-between hover:border-cyan-400 transition-all duration-300 hover:-translate-y-2 glow-hover relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-black text-xs px-4 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                        Paling Populer
+                    </div>
+                    
+                    <div>
+                        <div class="flex justify-between items-start mb-4 mt-2">
+                            <span class="p-3 bg-cyan-950/80 border border-cyan-700/50 rounded-2xl text-cyan-400 text-2xl">
+                                <i class="fa-brands fa-playstation"></i>
+                            </span>
+                            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs font-semibold px-3 py-1 rounded-full">Favorit</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-1">PlayStation 4 Slim / Pro</h4>
+                        <p class="text-xs text-slate-400 mb-6">Grafis tajam, game paling lengkap & lancar.</p>
+
+                        <!-- Pricing List -->
+                        <div class="space-y-3 mb-6 bg-slate-950/80 p-4 rounded-2xl border border-cyan-900/40">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-400">12 Jam</span>
+                                <span class="font-bold text-white">Rp 70.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800 pt-2">
+                                <span class="text-slate-400">24 Jam (1 Hari)</span>
+                                <span class="font-bold text-cyan-400 text-base">Rp 100.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800 pt-2">
+                                <span class="text-slate-400">3 Hari Paket Gaming</span>
+                                <span class="font-bold text-white">Rp 270.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="space-y-2 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>2 Stik Strik DualShock 4 Original</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Game Update Terbaru (eFootball 2024, FIFA 24, Red Dead 2)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Siap Diantar Langsung / COD</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderViaWA('PlayStation 4')" class="w-full py-3.5 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg shadow-cyan-500/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Sewa PS4 Sekarang</span>
+                    </button>
+                </div>
+
+                <!-- PS5 Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 hover:-translate-y-2 group">
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 bg-purple-950/60 border border-purple-800/50 rounded-2xl text-purple-400 text-2xl">
+                                <i class="fa-solid fa-vr-cardboard"></i>
+                            </span>
+                            <span class="bg-purple-900/40 text-purple-300 border border-purple-700/50 text-xs font-semibold px-3 py-1 rounded-full">Next-Gen</span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-1">PlayStation 5</h4>
+                        <p class="text-xs text-slate-400 mb-6">Pengalaman gaming Next-Gen 4K ultra smooth.</p>
+
+                        <!-- Pricing List -->
+                        <div class="space-y-3 mb-6 bg-slate-950/60 p-4 rounded-2xl border border-slate-800/50">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-slate-400">12 Jam</span>
+                                <span class="font-bold text-white">Rp 140.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800/50 pt-2">
+                                <span class="text-slate-400">24 Jam (1 Hari)</span>
+                                <span class="font-bold text-cyan-400">Rp 200.000</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm border-t border-slate-800/50 pt-2">
+                                <span class="text-slate-400">3 Hari Next-Gen</span>
+                                <span class="font-bold text-white">Rp 550.000</span>
+                            </div>
+                        </div>
+
+                        <!-- Features -->
+                        <ul class="space-y-2 text-xs text-slate-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>2 Stik DualSense Wireless PS5</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Grafis Ultra HD 4K & Loading Kilat (SSD)</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-400 mr-2"></i>Game Eksklusif PS5 Terbaik</li>
+                        </ul>
+                    </div>
+
+                    <button onclick="orderViaWA('PlayStation 5')" class="w-full py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-xl transition-all duration-200 flex items-center justify-center space-x-2 border border-slate-700">
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                        <span>Sewa PS5 Sekarang</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery & On-Site Location Methods -->
+    <section id="layanan" class="py-20 bg-slate-900 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">Fleksibilitas Sewa</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Bisa Diantar ke Rumah / Main di Tempat</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Pilih cara pemesanan yang paling nyaman untuk Anda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Method 1: Delivery COD -->
+                <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-cyan-500 flex items-center justify-center text-2xl text-white mb-6">
+                        <i class="fa-solid fa-truck-ramp-box"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Layanan COD / Antar Sampai Rumah</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Malas keluar rumah? Kami antar unit console PlayStation beserta perlengkapannya langsung ke alamat Anda. Tim kami juga siap membantu proses pemasangan ke TV rumah Anda hingga siap dimainkan.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>Pengantaran cepat & tepat waktu</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>Gratis ongkir untuk area terdekat</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-emerald-400 mr-3"></i>Pengecekan alat langsung bersama kurir</li>
+                    </ul>
+                </div>
+
+                <!-- Method 2: Play at Rental Place -->
+                <div class="bg-slate-950 p-8 rounded-3xl border border-slate-800 relative overflow-hidden group hover:border-slate-700 transition-all">
+                    <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-2xl text-white mb-6">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">Main / Ambil Langsung Di Tempat</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Ingin suasana mabar yang seru dengan TV layar besar & ruangan ber-AC? Anda bisa langsung datang ke tempat rental kami atau melakukan pengambilan unit sendiri (Self Pick-up).
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-purple-400 mr-3"></i>Ruangan bersih & ber-AC nyaman</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-purple-400 mr-3"></i>TV 43" & 50" 4K HDR super jernih</li>
+                        <li class="flex items-center"><i class="fa-solid fa-circle-check text-purple-400 mr-3"></i>Tersedia snack & minuman dingin</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section id="pembayaran" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">Transaksi Praktis</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Metode Pembayaran Lengkap</h3>
+                <p class="text-slate-400 mt-3 text-sm sm:text-base">Bayar dengan aman dan mudah secara non-tunai maupun tunai saat COD.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- E-Wallet -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white">E-Wallet</h5>
+                    <p class="text-xs text-slate-400">GoPay, OVO, DANA, ShopeePay</p>
+                </div>
+
+                <!-- Transfer Bank -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white">Rekening Bank</h5>
+                    <p class="text-xs text-slate-400">BCA, Mandiri, BRI, BNI</p>
+                </div>
+
+                <!-- QRIS -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white">QRIS</h5>
+                    <p class="text-xs text-slate-400">Scan dari semua aplikasi m-Banking</p>
+                </div>
+
+                <!-- Cash COD -->
+                <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl text-center space-y-3">
+                    <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h5 class="text-lg font-bold text-white">Cash / Tunai</h5>
+                    <p class="text-xs text-slate-400">Bayar saat unit sampai di lokasi (COD)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Procedure / Syarat Sewa -->
+    <section id="prosedur" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-brand-cyan mb-2">Langkah Mudah</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-white">Cara Pemesanan & Syarat</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 right-4">01</span>
+                    <h5 class="text-lg font-bold text-white mb-2">Pilih Tipe PS</h5>
+                    <p class="text-xs text-slate-400">Pilih tipe PS3, PS4, atau PS5 sesuai paket durasi yang Anda inginkan.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 right-4">02</span>
+                    <h5 class="text-lg font-bold text-white mb-2">Order Via WA</h5>
+                    <p class="text-xs text-slate-400">Klik tombol WhatsApp untuk mengirimkan detail alamat & jadwal pengantaran.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 right-4">03</span>
+                    <h5 class="text-lg font-bold text-white mb-2">Verifikasi Identitas</h5>
+                    <p class="text-xs text-slate-400">Siapkan identitas diri (KTP/SIM/KTM asli) sebagai jaminan selama masa sewa.</p>
+                </div>
+
+                <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 relative">
+                    <span class="text-4xl font-black text-slate-800 absolute top-4 right-4">04</span>
+                    <h5 class="text-lg font-bold text-white mb-2">Unit Diantar & Main</h5>
+                    <p class="text-xs text-slate-400">Unit diantar/dipasang, lakukan pembayaran, dan Anda siap main sepuasnya!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Banner Call To Action -->
+    <section class="py-16 ps-gradient relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
+            <h3 class="text-3xl sm:text-5xl font-black text-white">Siap Untuk Main Game Hari Ini?</h3>
+            <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base">
+                Hubungi kami sekarang untuk cek ketersediaan unit. Stok terbatas setiap harinya!
+            </p>
+            <div class="pt-4">
+                <a href="https://wa.me/6282115245798?text=Halo%20PlayRental,%20saya%20mau%20booking%20rental%20PS%20sekarang" target="_blank" class="inline-flex items-center space-x-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black px-8 py-4 rounded-full text-lg transition-all duration-300 shadow-xl shadow-emerald-500/20 hover:scale-105">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    <span>Order Sekarang: +62 821-1524-5798</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div class="flex items-center space-x-2">
+                <i class="fa-brands fa-playstation text-brand-cyan"></i>
+                <span class="font-bold text-slate-300">PLAYRENTAL</span>
+                <span>&copy; 2026 Hak Cipta Dilindungi.</span>
+            </div>
+            <div>
+                <span>Pemesanan Cepat WhatsApp: +62 821-1524-5798</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Toggle Mobile Navigation Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Function to construct custom WhatsApp message based on selection
+        function orderViaWA(psType) {
+            const phoneNumber = "6282115245798";
+            const message = `Halo PlayRental, saya ingin melakukan pemesanan sewa unit ${psType}.\n\nMohon info ketersediaan unit dan opsi pengantarannya. Terima kasih!`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+    </script>
+</body>
+</html>
